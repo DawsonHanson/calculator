@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* image from https://cdn.pixabay.com/photo/2016/07/28/04/31/math-1547018_960_720.jpg */ 
+  background: url(./background.png) center no-repeat;
+  background-size: cover;
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 526px;
+  width: 390px;
+  background-color: rgb(44, 44, 255);
+  border-radius: 12px;
+}
+
+.display {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 70px;
+  width: 290px;
+  background-color: rgb(247, 247, 247);
+  border-radius: 4px;
+  font-size: 43px;
+  font-family: monospace;
+}
+
+.box1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  width: 330px;
+  border: 3px solid skyblue;
+}
+
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin: 12px 0px;
+  width: 230px;
+  gap: 12px;
+}
+
+.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .zero, .decimal, .clear, .add, .subtract, .multiply, .divide, .equals, .plus-minus, .square-root, .percent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 25px;
+  font-family: monospace;
+}
+
+.operators {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0px;
+  gap: 12px;
+}
+
+.add, .subtract, .multiply, .divide, .equals, .plus-minus, .square-root, .percent {
+  background-color: rgb(250, 75, 44);
+}
+
+.clear {
+  background-color: rgb(255, 196, 0);
+}
