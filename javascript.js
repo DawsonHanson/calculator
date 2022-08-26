@@ -20,85 +20,13 @@ const squareRoot = document.querySelector('.square-root')
 const percent = document.querySelector('.percent')
 const display = document.querySelector('.display')
 
-one.addEventListener('mousedown', () => {
-  one.classList.add('change-white')
+const checkZero = function () {
   if (display.textContent.length == 1 && display.textContent == 0) {
     display.textContent = ''
   }
-  display.textContent += 1
-})
+}
 
-two.addEventListener('mousedown', () => {
-  two.classList.add('change-white')
-  if (display.textContent.length == 1 && display.textContent == 0) {
-    display.textContent = ''
-  }
-  display.textContent += 2
-})
-
-three.addEventListener('mousedown', () => {
-  three.classList.add('change-white')
-  if (display.textContent.length == 1 && display.textContent == 0) {
-    display.textContent = ''
-  }
-  display.textContent += 3
-})
-
-four.addEventListener('mousedown', () => {
-  four.classList.add('change-white')
-  if (display.textContent.length == 1 && display.textContent == 0) {
-    display.textContent = ''
-  }
-  display.textContent += 4
-})
-
-five.addEventListener('mousedown', () => {
-  five.classList.add('change-white')
-  if (display.textContent.length == 1 && display.textContent == 0) {
-    display.textContent = ''
-  }
-  display.textContent += 5
-})
-
-six.addEventListener('mousedown', () => {
-  six.classList.add('change-white')
-  if (display.textContent.length == 1 && display.textContent == 0) {
-    display.textContent = ''
-  }
-  display.textContent += 6
-})
-
-seven.addEventListener('mousedown', () => {
-  seven.classList.add('change-white')
-  if (display.textContent.length == 1 && display.textContent == 0) {
-    display.textContent = ''
-  }
-  display.textContent += 7
-})
-
-eight.addEventListener('mousedown', () => {
-  eight.classList.add('change-white')
-  display.textContent += 8
-})
-
-nine.addEventListener('mousedown', () => {
-  nine.classList.add('change-white')
-  if (display.textContent.length == 1 && display.textContent == 0) {
-    display.textContent = ''
-  }
-  display.textContent += 9
-})
-
-zero.addEventListener('mousedown', () => {
-  zero.classList.add('change-white')
-  if (display.textContent.length == 1 && display.textContent == 0) {
-    display.textContent = ''
-  }
-  display.textContent += 0
-})
-
-decimal.addEventListener('mousedown', () => {
-  decimal.classList.add('change-white')
+const checkDecimal = function () {
   let text = display.textContent
   let result = text.includes('.')
   if (result === true) {
@@ -106,6 +34,72 @@ decimal.addEventListener('mousedown', () => {
   } else {
     display.textContent += '.'
   }
+}
+
+one.addEventListener('mousedown', () => {
+  one.classList.add('change-white')
+  checkZero()
+  checkLength()
+  display.textContent += 1
+})
+
+two.addEventListener('mousedown', () => {
+  two.classList.add('change-white')
+  checkZero()
+  display.textContent += 2
+})
+
+three.addEventListener('mousedown', () => {
+  three.classList.add('change-white')
+  checkZero()
+  display.textContent += 3
+})
+
+four.addEventListener('mousedown', () => {
+  four.classList.add('change-white')
+  checkZero()
+  display.textContent += 4
+})
+
+five.addEventListener('mousedown', () => {
+  five.classList.add('change-white')
+  checkZero()
+  display.textContent += 5
+})
+
+six.addEventListener('mousedown', () => {
+  six.classList.add('change-white')
+  checkZero()
+  display.textContent += 6
+})
+
+seven.addEventListener('mousedown', () => {
+  seven.classList.add('change-white')
+  checkZero()
+  display.textContent += 7
+})
+
+eight.addEventListener('mousedown', () => {
+  eight.classList.add('change-white')
+  checkZero()
+  display.textContent += 8
+})
+
+nine.addEventListener('mousedown', () => {
+  nine.classList.add('change-white')
+  checkZero()
+  display.textContent += 9
+})
+
+zero.addEventListener('mousedown', () => {
+  zero.classList.add('change-white')
+  checkZero()
+  display.textContent += 0
+})
+
+decimal.addEventListener('mousedown', () => {
+  decimal.classList.add('change-white')
+  checkDecimal()
 })
 
 clear.addEventListener('mousedown', () => {
@@ -171,83 +165,57 @@ window.addEventListener('mouseup', () => {
 window.addEventListener('keydown', (x) => {
   if (x.key == 1) {
     one.classList.add('change-white')
-  if (display.textContent.length == 1 && display.textContent == 0) {
-    display.textContent = ''
-  }
+    checkZero()
   display.textContent += 1
   }
   if (x.key == 2) {
     two.classList.add('change-white')
-  if (display.textContent.length == 1 && display.textContent == 0) {
-    display.textContent = ''
-  }
-  display.textContent += 2
+    checkZero()
+    display.textContent += 2
   }
   if (x.key == 3) {
     three.classList.add('change-white')
-  if (display.textContent.length == 1 && display.textContent == 0) {
-    display.textContent = ''
-  }
-  display.textContent += 3
+    checkZero()
+    display.textContent += 3
   }
   if (x.key == 4) {
     four.classList.add('change-white')
-  if (display.textContent.length == 1 && display.textContent == 0) {
-    display.textContent = ''
-  }
-  display.textContent += 4
+    checkZero()
+    display.textContent += 4
   }
   if (x.key == 5) {
     five.classList.add('change-white')
-    if (display.textContent.length == 1 && display.textContent == 0) {
-      display.textContent = ''
-    }
+    checkZero()
     display.textContent += 5
   }
   if (x.key == 6) {
     six.classList.add('change-white')
-    if (display.textContent.length == 1 && display.textContent == 0) {
-      display.textContent = ''
-    }
+    checkZero()
     display.textContent += 6
   }
   if (x.key == 7) {
     seven.classList.add('change-white')
-    if (display.textContent.length == 1 && display.textContent == 0) {
-      display.textContent = ''
-    }
+    checkZero()
     display.textContent += 7
   }
   if (x.key == 8) {
     eight.classList.add('change-white')
-    if (display.textContent.length == 1 && display.textContent == 0) {
-      display.textContent = ''
-    }
+    checkZero()
     display.textContent += 8
   }
   if (x.key == 9) {
     nine.classList.add('change-white')
-    if (display.textContent.length == 1 && display.textContent == 0) {
-      display.textContent = ''
-    }
+    checkZero()
     display.textContent += 9
   }
   if (x.key == 0) {
     zero.classList.add('change-white')
-    if (display.textContent.length == 1 && display.textContent == 0) {
-      display.textContent = ''
-    }
+    checkZero()
     display.textContent += 0
   }
   if (x.key == '.') {
     decimal.classList.add('change-white')
-    let text = display.textContent
-    let x = text.includes('.')
-    if (x === true) {
-      display.textContent += ''
-    } else {
-      display.textContent += '.'
-    }
+    checkDecimal()
   }
   if (x.key == 'Escape') {
     clear.classList.add('change-yellow')
