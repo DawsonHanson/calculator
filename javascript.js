@@ -42,7 +42,7 @@ window.addEventListener('mouseup', () => {
   squareRoot.classList.remove('change-red')
   percent.classList.remove('change-red')
   })
-  
+
 one.addEventListener('mousedown', () => {
   one.classList.add('change-white')
 })
@@ -121,4 +121,118 @@ squareRoot.addEventListener('mousedown', () => {
 
 percent.addEventListener('mousedown', () => {
   percent.classList.add('change-red')
+})
+
+window.addEventListener('keydown', (x) => {
+  if (x.key == 1) {
+    one.classList.add('change-white')
+  }
+  if (x.key == 2) {
+    two.classList.add('change-white')
+  }
+  if (x.key == 3) {
+    three.classList.add('change-white')
+  }
+  if (x.key == 4) {
+    four.classList.add('change-white')
+  }
+  if (x.key == 5) {
+    five.classList.add('change-white')
+  }
+  if (x.key == 6) {
+    six.classList.add('change-white')
+  }
+  if (x.key == 7) {
+    seven.classList.add('change-white')
+  }
+  if (x.key == 8) {
+    eight.classList.add('change-white')
+  }
+  if (x.key == 9) {
+    nine.classList.add('change-white')
+  }
+  if (x.key == 0) {
+    zero.classList.add('change-white')
+  }
+  if (x.key == '.') {
+    decimal.classList.add('change-white')
+  }
+  if (x.key == 'Escape') {
+    clear.classList.add('change-yellow')
+  }
+  if (x.key == '/') {
+    divide.classList.add('change-red')
+  }
+  if (x.key == '*') {
+    multiply.classList.add('change-red')
+  }
+  if (x.key == '-') {
+    subtract.classList.add('change-red')
+  }
+  if (x.key == '+') {
+    add.classList.add('change-red')
+  }
+  if (x.key == '=' || x.key == 'Enter') {
+    equals.classList.add('change-red')
+  }
+  if (x.key == '%') {
+    percent.classList.add('change-red')
+  }
+})
+
+window.addEventListener('keyup', (x) => {
+  if (x.key == 1) {
+    one.classList.remove('change-white')
+  }
+  if (x.key == 2) {
+    two.classList.remove('change-white')
+  }
+  if (x.key == 3) {
+    three.classList.remove('change-white')
+  }
+  if (x.key == 4) {
+    four.classList.remove('change-white')
+  }
+  if (x.key == 5) {
+    five.classList.remove('change-white')
+  }
+  if (x.key == 6) {
+    six.classList.remove('change-white')
+  }
+  if (x.key == 7) {
+    seven.classList.remove('change-white')
+  }
+  if (x.key == 8) {
+    eight.classList.remove('change-white')
+  }
+  if (x.key == 9) {
+    nine.classList.remove('change-white')
+  }
+  if (x.key == 0) {
+    zero.classList.remove('change-white')
+  }
+  if (x.key == '.') {
+    decimal.classList.remove('change-white')
+  }
+  if (x.key == 'Escape') {
+    clear.classList.remove('change-yellow')
+  }
+  if (x.key == '/') {
+    divide.classList.remove('change-red')
+  }
+  if (x.key == '*') {
+    multiply.classList.remove('change-red')
+  }
+  if (x.key == '-') {
+    subtract.classList.remove('change-red')
+  }
+  if (x.key == '+') {
+    add.classList.remove('change-red')
+  }
+  if (x.key == '=' || x.key == 'Enter') {
+    equals.classList.remove('change-red')
+  }
+  if (x.key == '%') {
+    percent.classList.remove('change-red')
+  }
 })
