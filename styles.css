@@ -3,7 +3,9 @@
 }
 
 html {
+  user-select: none;
   height: 100%;
+  font-family: monospace;
 }
 
 body {
@@ -39,7 +41,6 @@ body {
   border: 3px solid grey;
   border-radius: 4px;
   font-size: 43px;
-  font-family: monospace;
 }
 
 .box1 {
@@ -71,7 +72,6 @@ body {
   border: 2px solid black;
   border-radius: 4px;
   font-size: 25px;
-  font-family: monospace;
 }
 
 .operators {
@@ -86,5 +86,17 @@ body {
 }
 
 .clear {
-  background-color: rgb(255, 196, 0);
+  background-color: gold;
+}
+
+.change-white {
+  background-color: lightskyblue;
+}
+
+.change-red {
+  background-color: rgb(255, 0, 0);
+}
+
+.change-yellow {
+  background-color: rgb(224, 177, 19);
 }
