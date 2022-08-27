@@ -29,75 +29,95 @@ const checkZero = function () {
 const checkDecimal = function () {
   let text = display.textContent
   let result = text.includes('.')
-  if (result === true) {
+  if (result === true || text.length == 9) {
     display.textContent += ''
   } else {
-    display.textContent += '.'
+    checkLength()
+  }
+}
+
+let value;
+
+const checkLength = function() {
+  if (display.textContent.length >= 10) {
+    display.textContent += ''
+  } else {
+    display.textContent += value
   }
 }
 
 one.addEventListener('mousedown', () => {
+  value = 1
   one.classList.add('change-white')
   checkZero()
   checkLength()
-  display.textContent += 1
 })
 
 two.addEventListener('mousedown', () => {
+  value = 2
   two.classList.add('change-white')
   checkZero()
-  display.textContent += 2
+  checkLength()
 })
 
 three.addEventListener('mousedown', () => {
+  value = 3
   three.classList.add('change-white')
   checkZero()
-  display.textContent += 3
+  checkLength()
 })
 
 four.addEventListener('mousedown', () => {
+  value = 4
   four.classList.add('change-white')
   checkZero()
-  display.textContent += 4
+  checkLength()
 })
 
 five.addEventListener('mousedown', () => {
+  value = 5
   five.classList.add('change-white')
   checkZero()
-  display.textContent += 5
+  checkLength()
 })
 
 six.addEventListener('mousedown', () => {
+  value = 6
   six.classList.add('change-white')
   checkZero()
-  display.textContent += 6
+  checkLength()
 })
 
 seven.addEventListener('mousedown', () => {
+  value = 7
   seven.classList.add('change-white')
   checkZero()
-  display.textContent += 7
+  checkLength()
 })
 
 eight.addEventListener('mousedown', () => {
+  value = 8
   eight.classList.add('change-white')
   checkZero()
-  display.textContent += 8
+  checkLength()
 })
 
 nine.addEventListener('mousedown', () => {
+  value = 9
   nine.classList.add('change-white')
   checkZero()
-  display.textContent += 9
+  checkLength()
 })
 
 zero.addEventListener('mousedown', () => {
+  value = 0
   zero.classList.add('change-white')
   checkZero()
-  display.textContent += 0
+  checkLength()
 })
 
 decimal.addEventListener('mousedown', () => {
+  value = '.'
   decimal.classList.add('change-white')
   checkDecimal()
 })
@@ -164,56 +184,67 @@ window.addEventListener('mouseup', () => {
 
 window.addEventListener('keydown', (x) => {
   if (x.key == 1) {
+    value = 1
     one.classList.add('change-white')
     checkZero()
-  display.textContent += 1
+    checkLength()
   }
   if (x.key == 2) {
+    value = 2
     two.classList.add('change-white')
     checkZero()
-    display.textContent += 2
+    checkLength()
   }
   if (x.key == 3) {
+    value = 3
     three.classList.add('change-white')
     checkZero()
-    display.textContent += 3
+    checkLength()
   }
   if (x.key == 4) {
+    value = 4
     four.classList.add('change-white')
     checkZero()
-    display.textContent += 4
+    checkLength()
   }
   if (x.key == 5) {
+    value = 5
     five.classList.add('change-white')
     checkZero()
-    display.textContent += 5
+    checkLength()
   }
   if (x.key == 6) {
+    value = 6
     six.classList.add('change-white')
     checkZero()
-    display.textContent += 6
+    checkLength()
   }
   if (x.key == 7) {
+    value = 7
     seven.classList.add('change-white')
     checkZero()
-    display.textContent += 7
+    checkLength()
   }
   if (x.key == 8) {
+    value = 8
     eight.classList.add('change-white')
     checkZero()
-    display.textContent += 8
+    checkLength()
   }
   if (x.key == 9) {
+    value = 9
     nine.classList.add('change-white')
     checkZero()
-    display.textContent += 9
+    checkLength()
   }
   if (x.key == 0) {
+    value = 0
     zero.classList.add('change-white')
     checkZero()
-    display.textContent += 0
+    checkLength()
   }
   if (x.key == '.') {
+    value = '.'
     decimal.classList.add('change-white')
     checkDecimal()
   }
