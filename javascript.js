@@ -537,7 +537,11 @@ window.addEventListener('keydown', (x) => {
     operator = 0
   }
   if (x.key == '%') {
+    val2 = 1
     percent.classList.add('change-red')
+    createNumber()
+    operators.percent()
+    operator = 5
   }
 })
 
