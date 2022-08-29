@@ -78,6 +78,7 @@ const calcOperator = function(x) {
   if (x == 2) {operators.subtract()}
   if (x == 3) {operators.multiply()}
   if (x == 4) {operators.divide()}
+  if (x == 5) {operators.percent()}
 }
 
 const addPrevious = function() {
@@ -108,6 +109,13 @@ const dividePrevious = function() {
   display.textContent = numX
 }
 
+const percentPrevious = function() {
+  numZ = (numX / numY) * 100
+  numX = numZ
+  numY = 0
+  display.textContent = numX
+}
+
 const operators = {
   add: function() {
     if (operator == 2) {
@@ -118,6 +126,9 @@ const operators = {
     }
     if (operator == 4) {
       dividePrevious()
+    }
+    if (operator == 5) {
+      percentPrevious()
     }
     if (numX != 0 && numY != 0) {
       numZ = numX + numY
@@ -137,6 +148,9 @@ const operators = {
     if (operator == 4) {
       dividePrevious()
     }
+    if (operator == 5) {
+      percentPrevious()
+    }
     if (numX != 0 && numY != 0) {
       numZ = numX - numY
       numY = 0
@@ -154,6 +168,9 @@ const operators = {
     }
     if (operator == 4) {
       dividePrevious()
+    }
+    if (operator == 5) {
+      percentPrevious()
     }
     if (numX != 0 && numY != 0) {
       numZ = numX * numY
@@ -173,6 +190,9 @@ const operators = {
     if (operator == 3) {
       multiplyPrevious()
     }
+    if (operator == 5) {
+      percentPrevious()
+    }
     if (numX != 0 && numY != 0) {
       numZ = numX / numY
       numY = 0
@@ -180,6 +200,27 @@ const operators = {
       display.textContent = numX
     }
   },
+ 
+  percent: function() {
+    if (operator == 1) {
+      addPrevious()
+    }
+    if (operator == 2) {
+      subtractPrevious()
+    }
+    if (operator == 3) {
+      multiplyPrevious()
+    }
+    if (operator == 4) {
+      dividePrevious()
+    }
+    if (numX != 0 && numY != 0) {
+      numZ = ((numX / numY) * 100)
+      numX = numZ
+      numY = 0
+      display.textContent = numX
+    }
+  }
 }
 
 one.addEventListener('mousedown', () => {
@@ -336,7 +377,11 @@ squareRoot.addEventListener('mousedown', () => {
 })
 
 percent.addEventListener('mousedown', () => {
+  val2 = 1
   percent.classList.add('change-red')
+  createNumber()
+  operators.percent()
+  operator = 5
 })
 
 window.addEventListener('mouseup', () => {
