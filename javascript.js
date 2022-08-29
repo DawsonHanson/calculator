@@ -220,7 +220,30 @@ const operators = {
       numY = 0
       display.textContent = numX
     }
-  }
+  },
+
+  squareRoot: function() {
+    if (operator == 1) {
+      addPrevious()
+    }
+    if (operator == 2) {
+      subtractPrevious()
+    }
+    if (operator == 3) {
+      multiplyPrevious()
+    }
+    if (operator == 4) {
+      dividePrevious()
+    }
+    if (operator == 5) {
+      percentPrevious()
+    }
+    if (numX != 0) {
+      numZ = Math.sqrt(numX)
+      numX = numZ
+      display.textContent = numX
+    }
+  },
 }
 
 one.addEventListener('mousedown', () => {
@@ -373,7 +396,10 @@ plusMinus.addEventListener('mousedown', () => {
 })
 
 squareRoot.addEventListener('mousedown', () => {
+  val2 = 1
   squareRoot.classList.add('change-red')
+  createNumber()
+  operators.squareRoot()
 })
 
 percent.addEventListener('mousedown', () => {
