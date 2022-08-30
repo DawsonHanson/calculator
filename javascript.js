@@ -50,6 +50,9 @@ const checkNumber = function(x) {
 }
 
 const checkZero = function() {
+  if (display.textContent.length == 2 && display.textContent == -0) {
+    display.textContent = '-'
+  }
   if (display.textContent.length == 1 && display.textContent == 0) {
     display.textContent = ''
   }
@@ -393,6 +396,12 @@ equals.addEventListener('mousedown', () => {
 
 plusMinus.addEventListener('mousedown', () => {
   plusMinus.classList.add('change-red')
+  let result = display.textContent.includes('-')
+  if (result == true) {
+    display.textContent = display.textContent.replace('-','')
+  } else {
+    display.textContent = display.textContent.replace('','-')
+  }
 })
 
 squareRoot.addEventListener('mousedown', () => {
