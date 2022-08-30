@@ -76,6 +76,15 @@ const checkLength = function() {
   }
 }
 
+const checkLengthAnswer = function (x) {
+  let y = x.toString()
+  if (y.length > 10) {
+    display.textContent = 'error'
+  } else {
+    display.textContent = x
+  }
+}
+
 let rounded = function(x) {
   return Math.round((x + Number.EPSILON) *100) / 100;
 }
@@ -92,35 +101,35 @@ const addPrevious = function() {
   numZ = numX + numY
   numY = 0
   numX = rounded(numZ)
-  display.textContent = numX
+  checkLengthAnswer(numX)
 }
 
 const subtractPrevious = function() {
   numZ = numX - numY
   numY = 0
   numX = rounded(numZ)
-  display.textContent = numX
+  checkLengthAnswer(numX)
 }
 
 const multiplyPrevious = function() {
   numZ = numX * numY
   numY = 0
   numX = rounded(numZ)
-  display.textContent = numX
+  checkLengthAnswer(numX)
 }
 
 const dividePrevious = function() {
   numZ = numX / numY
   numY = 0
   numX = rounded(numZ)
-  display.textContent = numX
+  checkLengthAnswer(numX)
 }
 
 const percentPrevious = function() {
   numZ = (numX / numY) * 100
   numY = 0
   numX = rounded(numZ)
-  display.textContent = numX
+  checkLengthAnswer(numX)
 }
 
 const operators = {
@@ -141,7 +150,7 @@ const operators = {
       numZ = numX + numY
       numY = 0
       numX = rounded(numZ)
-      display.textContent = numX
+      checkLengthAnswer(numX)
     }
   },
 
@@ -162,7 +171,7 @@ const operators = {
       numZ = numX - numY
       numY = 0
       numX = rounded(numZ)
-      display.textContent = numX
+      checkLengthAnswer(numX)
     }
   },
 
@@ -183,7 +192,7 @@ const operators = {
       numZ = numX * numY
       numY = 0
       numX = rounded(numZ)
-      display.textContent = numX
+      checkLengthAnswer(numX)
     }
   },
 
@@ -204,7 +213,7 @@ const operators = {
       numZ = numX / numY
       numY = 0
       numX = rounded(numZ)
-      display.textContent = numX
+      checkLengthAnswer(numX)
     }
   },
  
@@ -225,7 +234,7 @@ const operators = {
       numZ = ((numX / numY) * 100)
       numX = rounded(numZ)
       numY = 0
-      display.textContent = numX
+      checkLengthAnswer(numX)
     }
   },
 
@@ -248,7 +257,7 @@ const operators = {
     if (numX != 0) {
       numZ = Math.sqrt(numX)
       numX = rounded(numZ)
-      display.textContent = numX
+      checkLengthAnswer(numX)
     }
   },
 }
