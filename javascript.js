@@ -76,6 +76,10 @@ const checkLength = function() {
   }
 }
 
+let rounded = function(x) {
+  return Math.round((x + Number.EPSILON) *100) / 100;
+}
+
 const calcOperator = function(x) {
   if (x == 1) {operators.add()}
   if (x == 2) {operators.subtract()}
@@ -87,35 +91,35 @@ const calcOperator = function(x) {
 const addPrevious = function() {
   numZ = numX + numY
   numY = 0
-  numX = numZ
+  numX = rounded(numZ)
   display.textContent = numX
 }
 
 const subtractPrevious = function() {
   numZ = numX - numY
   numY = 0
-  numX = numZ
+  numX = rounded(numZ)
   display.textContent = numX
 }
 
 const multiplyPrevious = function() {
   numZ = numX * numY
   numY = 0
-  numX = numZ
+  numX = rounded(numZ)
   display.textContent = numX
 }
 
 const dividePrevious = function() {
   numZ = numX / numY
   numY = 0
-  numX = numZ
+  numX = rounded(numZ)
   display.textContent = numX
 }
 
 const percentPrevious = function() {
   numZ = (numX / numY) * 100
-  numX = numZ
   numY = 0
+  numX = rounded(numZ)
   display.textContent = numX
 }
 
@@ -136,7 +140,7 @@ const operators = {
     if (numX != 0 && numY != 0) {
       numZ = numX + numY
       numY = 0
-      numX = numZ
+      numX = rounded(numZ)
       display.textContent = numX
     }
   },
@@ -157,7 +161,7 @@ const operators = {
     if (numX != 0 && numY != 0) {
       numZ = numX - numY
       numY = 0
-      numX = numZ
+      numX = rounded(numZ)
       display.textContent = numX
     }
   },
@@ -178,7 +182,7 @@ const operators = {
     if (numX != 0 && numY != 0) {
       numZ = numX * numY
       numY = 0
-      numX = numZ
+      numX = rounded(numZ)
       display.textContent = numX
     }
   },
@@ -199,7 +203,7 @@ const operators = {
     if (numX != 0 && numY != 0) {
       numZ = numX / numY
       numY = 0
-      numX = numZ
+      numX = rounded(numZ)
       display.textContent = numX
     }
   },
@@ -219,7 +223,7 @@ const operators = {
     }
     if (numX != 0 && numY != 0) {
       numZ = ((numX / numY) * 100)
-      numX = numZ
+      numX = rounded(numZ)
       numY = 0
       display.textContent = numX
     }
@@ -243,7 +247,7 @@ const operators = {
     }
     if (numX != 0) {
       numZ = Math.sqrt(numX)
-      numX = numZ
+      numX = rounded(numZ)
       display.textContent = numX
     }
   },
