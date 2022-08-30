@@ -258,6 +258,7 @@ const operators = {
       numZ = Math.sqrt(numX)
       numX = rounded(numZ)
       checkLengthAnswer(numX)
+      numX = 0
     }
   },
 }
